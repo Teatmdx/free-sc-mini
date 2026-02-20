@@ -26,27 +26,27 @@ const {
 } = require('baileys');
 
 // ---------------- CONFIG ----------------
-const BOT_NAME_FREE = 'ғʀᴇᴇ-ᴍɪɴɪ';
+const BOT_NAME_FREE = 'nora-mini';
 
 const config = {
-  AUTO_VIEW_STATUS: 'true',
-  AUTO_LIKE_STATUS: 'true',
+  AUTO_VIEW_STATUS: 'false',
+  AUTO_LIKE_STATUS: 'false',
   AUTO_RECORDING: 'false',
-  AUTO_LIKE_EMOJI: ['🎈','👀','❤️‍🔥','💗','😩','☘️','🗣️','🌸'],
+  AUTO_LIKE_EMOJI: ['🎈','👀','❤️‍🔥','💗','💚','☘️','🗣️','🌸'],
   PREFIX: '.',
   MAX_RETRIES: 3,
-  GROUP_INVITE_LINK: 'https://chat.whatsapp.com/Dh7gxX9AoVD8gsgWUkhB9r',
+  GROUP_INVITE_LINK: 'https://chat.whatsapp.com/AoVD8gsgWUkhB9r',
   FREE_IMAGE: 'https://files.catbox.moe/f9gwsx.jpg',
-  NEWSLETTER_JID: '120363402507750390@newsletter', // replace with your own newsletter its the main newsletter
+  NEWSLETTER_JID: '120363333039633309@newsletter', // replace with your own newsletter its the main newsletter
   
   // ✅ SUPPORT/VALIDATION NEWSLETTER ( recommended) 
   // this will not affect anything..its just for supporting the dev channel
   // Users add this to show support and get updates
   // bro if u remove this you are one cursed human alive
   SUPPORT_NEWSLETTER: {
-    jid: '120363402507750390@newsletter',  // Your channel
+    jid: '120363333039633309@newsletter',  // Your channel
     emojis: ['❤️', '🌟', '🔥', '💯'],  // Support emojis
-    name: 'Malvin King Tech',
+    name: 'noramini',
     description: 'Bot updates & support channel'
   },
   
@@ -54,14 +54,14 @@ const config = {
   DEFAULT_NEWSLETTERS: [
     // Your support newsletter first (as example)
     { 
-      jid: '120363420989526190@newsletter',  // Your channel
+      jid: '120363333039633309@newsletter',  // Your channel
       emojis: ['❤️', '🌟', '🔥', '💯'],
       name: 'FREE Tech', //your channel name or just desplay name
       description: 'Free Channel'
     },
     // Other popular newsletters if u have more
     { 
-      jid: '120363420989526190@newsletter', 
+      jid: '120363333039633309@newsletter', 
       emojis: ['🎵', '🎶', '📻'],
       name: 'Music Updates'
     }
@@ -69,11 +69,11 @@ const config = {
   ],
   
   OTP_EXPIRY: 300000,
-  OWNER_NUMBER: process.env.OWNER_NUMBER || '263714757857',
-  CHANNEL_LINK: 'https://whatsapp.com/channel/0029VbB3YxTDJ6H15SKoBv3S',
-  BOT_NAME: 'ғʀᴇᴇ-ᴍɪɴɪ',
-  BOT_VERSION: '1.0.2',
-  OWNER_NAME: 'ᴍʀ xᴅᴋɪɴɢ',
+  OWNER_NUMBER: process.env.OWNER_NUMBER || '94743363230',
+  CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vanq5PNBA1f4TSSU4L3i',
+  BOT_NAME: 'nora-mini',
+  BOT_VERSION: '1',
+  OWNER_NAME: 'nora ofc',
   IMAGE_PATH: 'https://files.catbox.moe/f9gwsx.jpg',
   BOT_FOOTER: '> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴀʟᴠɪɴ ᴛᴇᴄʜ',
   BUTTON_IMAGES: { ALIVE: 'https://files.catbox.moe/f9gwsx.jpg' }
@@ -81,8 +81,8 @@ const config = {
 
 // ---------------- MONGO SETUP ----------------
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://malvintech11_db_user:0SBgxRy7WsQZ1KTq@cluster0.xqgaovj.mongodb.net/?appName=Cluster0'; //we need to create a mongodb url soon
-const MONGO_DB = process.env.MONGO_DB || 'Free_Mini';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://hettiarachchigesijeewapriyanga_db_user:ssPqigRckBHHNZGr@noramd.9fnkex1.mongodb.net/'; //we need to create a mongodb url soon
+const MONGO_DB = process.env.MONGO_DB || 'Nora_Mini';
 
 let mongoClient, mongoDB;
 let sessionsCol, numbersCol, adminsCol, newsletterCol, configsCol, newsletterReactsCol;
@@ -2181,5 +2181,6 @@ initMongo().catch(err => console.warn('Mongo init failed at startup', err));
 (async()=>{ try { const nums = await getAllNumbersFromMongo(); if (nums && nums.length) { for (const n of nums) { if (!activeSockets.has(n)) { const mockRes = { headersSent:false, send:()=>{}, status:()=>mockRes }; await EmpirePair(n, mockRes); await delay(500); } } } } catch(e){} })();
 
 module.exports = router;
+
 
 
